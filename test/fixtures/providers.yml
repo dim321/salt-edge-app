@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  saltedge_id: MyString
+  name: MyString
+  code: MyString
+  mode: 1
+  status: 1
+
+two:
+  saltedge_id: MyString
+  name: MyString
+  code: MyString
+  mode: 1
+  status: 1

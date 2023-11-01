@@ -1,4 +1,4 @@
-<%= form_with(model: customer) do |form| %>
+<%= simple_form_for customer, html: { class: "customer form" } do |form| %>
   <% if customer.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
@@ -37,6 +37,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn--secondary"%>
   </div>
 <% end %>

@@ -9,5 +9,5 @@ first:
   password: password
 
 second:
-  second@company.email
+  email: second@company.email
   password: password
