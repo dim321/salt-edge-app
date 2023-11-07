@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @connection %>
+<%= render partial: 'ext_connection', object: @connection, as: :connection %>
 
 <div>
   <%= link_to "Edit this connection", edit_connection_path(@connection) %> |
