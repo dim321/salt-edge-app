@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :transactions
+  resources :accounts
+  root 'connections#index'
+  resources :connections
   resources :providers
   resources :customers
   devise_for :users

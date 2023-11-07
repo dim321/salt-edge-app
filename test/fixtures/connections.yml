@@ -1,0 +1,57 @@
+# == Schema Information
+#
+# Table name: connections
+#
+#  id                        :bigint           not null, primary key
+#  categorization            :string
+#  country_code              :string
+#  daily_refresh             :boolean
+#  last_attempt              :string
+#  last_success_at           :datetime
+#  next_refresh_possible_at  :datetime
+#  provider_code             :string
+#  provider_name             :string
+#  secret                    :string
+#  show_consent_confirmation :boolean
+#  status                    :integer
+#  store_credentials         :boolean
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
+#  customer_id               :string
+#  last_consent_id           :string
+#  provider_id               :string
+#
+
+one:
+  saltedge_id: MyString
+  secret: MyString
+  provider_id: MyString
+  provider_code: MyString
+  provider_name: MyString
+  daily_refresh: false
+  customer_id: MyString
+  last_success_at: 2023-11-01 20:43:03
+  status: 1
+  country_code: MyString
+  next_refresh_possible_at: 2023-11-01 20:43:03
+  store_credentials: false
+  last_attempt: MyString
+  show_consent_confirmation: false
+  last_consent_id: MyString
+
+two:
+  saltedge_id: MyString
+  secret: MyString
+  provider_id: MyString
+  provider_code: MyString
+  provider_name: MyString
+  daily_refresh: false
+  customer_id: MyString
+  last_success_at: 2023-11-01 20:43:03
+  status: 1
+  country_code: MyString
+  next_refresh_possible_at: 2023-11-01 20:43:03
+  store_credentials: false
+  last_attempt: MyString
+  show_consent_confirmation: false
+  last_consent_id: MyString

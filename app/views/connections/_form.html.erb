@@ -1,0 +1,27 @@
+
+<%= simple_form_for(@connection) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :id %>
+    <%= f.input :secret %>
+    <%= f.input :provider_id %>
+    <%= f.input :provider_code %>
+    <%= f.input :provider_name %>
+    <%= f.input :daily_refresh %>
+    <%= f.input :customer_id %>
+    <%= f.input :last_success_at %>
+    <%= f.input :status %>
+    <%= f.input :country_code %>
+    <%= f.input :next_refresh_possible_at %>
+    <%= f.input :store_credentials %>
+    <%= f.input :last_attempt %>
+    <%= f.input :show_consent_confirmation %>
+    <%= f.input :last_consent_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

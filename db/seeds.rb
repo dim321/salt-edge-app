@@ -7,3 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+password = 'password'
+email = 'testuser@email.test'
+
+# Create user
+User.create(email:, password:)
+
+Provider.create(code: 'fakebank_simple_xf', name: 'Fake Bank', status: :active, mode: :web, id: '68')

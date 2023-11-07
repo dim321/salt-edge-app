@@ -1,15 +1,35 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: customers
+#
+#  id         :bigint           not null, primary key
+#  blocked_at :datetime
+#  identifier :string           not null
+#  secret     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :bigint           not null
+#
+# Indexes
+#
+#  index_customers_on_identifier  (identifier)
+#  index_customers_on_user_id     (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
 
-one:
-  user: one
-  saltedge_id: 1
-  identifier: 
-  secret: MyString
-  blocked_at: 2023-10-31 11:58:27
+first:
+  user: first
+  id: 1
+  identifier: user.email
+  secret: MySecret
 
-two:
-  user: two
-  saltedge_id: 1
-  identifier: 
-  secret: MyString
-  blocked_at: 2023-10-31 11:58:27
+
+second:
+  user: second
+  id: 2
+  identifier: user.email
+  secret: SecondSecret
+
