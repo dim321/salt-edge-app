@@ -1,14 +1,10 @@
 <p style="color: green"><%= notice %></p>
-
+<%= link_to sanitize("&larr; Back to connections"), connections_path, class: "btn btn--secondary" %>
+<div class="header">
 <h1>Accounts</h1>
-
-<div id="accounts">
-  <% @accounts.each do |account| %>
-    <%= render account %>
-    <p>
-      <%= link_to "Show this account", account %>
-    </p>
-  <% end %>
 </div>
 
-<%= link_to "New account", new_account_path %>
+<div id="accounts">
+    <%= render @accounts %>
+</div>
+

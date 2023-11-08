@@ -1,9 +1,11 @@
 <p style="color: green"><%= notice %></p>
+<%= link_to sanitize("&larr; To customer"), customers_path, class: "btn btn--secondary" %>
 <div class="header">
   <h1>Connections</h1>
 </div>
 <div id="connections">
     <%= render @connections %>
 </div>
-
-<%= link_to "New connection", new_connection_path, class: "btn btn--primary" %>
+<% if @connections.empty?%>
+  <%= link_to "New connection", new_connection_path, class: "btn btn--primary" %>
+<% end %>

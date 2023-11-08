@@ -1,9 +1,10 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[ show edit update destroy ]
+  before_action :set_transactions, only: :index
 
   # GET /transactions or /transactions.json
   def index
-    @transactions = Transaction.all
+    # @transactions = Transaction.all
   end
 
   # GET /transactions/1 or /transactions/1.json
@@ -61,6 +62,10 @@ class TransactionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_transaction
       @transaction = Transaction.find(params[:id])
+    end
+
+    def set_transactions
+      @transactions = Account.find(params[:account_id]).transactions
     end
 
     # Only allow a list of trusted parameters through.

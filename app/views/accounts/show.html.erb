@@ -1,10 +1,6 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @account %>
-
-<div>
-  <%= link_to "Edit this account", edit_account_path(@account) %> |
-  <%= link_to "Back to accounts", accounts_path %>
-
-  <%= button_to "Destroy this account", @account, method: :delete %>
+<%= link_to sanitize("&larr; Back to accounts"), accounts_path, class: "btn btn--secondary" %>
+<div class="header">
+  <h1>Account</h1>
 </div>
+<%= render partial: 'show_account', object: @account, as: :account %>
