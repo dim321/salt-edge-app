@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Saltedge
   module ApiClient
     creds = Rails.application.credentials.saltedge

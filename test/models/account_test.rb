@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: accounts
@@ -20,7 +22,7 @@
 #
 #  fk_rails_...  (connection_id => connections.id)
 #
-require "test_helper"
+require 'test_helper'
 
 class AccountTest < ActiveSupport::TestCase
   # test "the truth" do

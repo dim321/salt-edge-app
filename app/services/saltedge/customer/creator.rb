@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Saltedge
   module Customer
     # class Saltedge::Customer::Creator is the Service object responsible

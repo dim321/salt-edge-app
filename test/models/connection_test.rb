@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: connections
@@ -21,7 +23,7 @@
 #  last_consent_id           :string
 #  provider_id               :string
 #
-require "test_helper"
+require 'test_helper'
 
 class ConnectionTest < ActiveSupport::TestCase
   # test "the truth" do

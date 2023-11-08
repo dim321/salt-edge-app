@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Saltedge
   module Accounts
     # class Saltedge::Accounts::Importer is the Service object responsible
