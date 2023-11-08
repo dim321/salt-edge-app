@@ -1,7 +1,17 @@
-<div id="<%= dom_id connection %>" class='list'>
+<div id="<%= dom_id connection %>" >
   <p>
     <strong>ID:</strong>
     <%= connection.id %>
+  </p>
+
+  <p>
+    <strong>Secret:</strong>
+    <%= connection.secret %>
+  </p>
+
+  <p>
+    <strong>Provider:</strong>
+    <%= connection.provider_id %>
   </p>
 
   <p>
@@ -50,6 +60,11 @@
   </p>
 
   <p>
+    <strong>Last attempt:</strong>
+    <%= connection.last_attempt %>
+  </p>
+
+  <p>
     <strong>Show consent confirmation:</strong>
     <%= connection.show_consent_confirmation %>
   </p>
@@ -60,11 +75,8 @@
   </p>
 
   <p>
-    <%= link_to "Show this connection", connection, class: "btn btn--secondary" %>
-  </p>
-
-  <p>
-    <%= link_to "Show accounts", accounts_path(id: connection.id), class: "btn btn--secondary" %>
+    <%= link_to "Show accounts", accounts_path(connection), class: "btn btn--secondary" %>
   </p>
 
 </div>
+

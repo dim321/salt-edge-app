@@ -1,10 +1,11 @@
+<%= link_to sanitize("&larr; Back to connections"), connections_path, class: "btn btn--secondary" %>
 <p style="color: green"><%= notice %></p>
+<div class="header">
+  <h1>Connection</h1>
+</div>
 
-<%= render @connection %>
+<%= render partial: 'show_connection', object: @connection, as: :connection %>
 
 <div>
-  <%= link_to "Edit this connection", edit_connection_path(@connection) %> |
-  <%= link_to "Back to connections", connections_path %>
-
-  <%= button_to "Destroy this connection", @connection, method: :delete %>
+  <%= button_to "Destroy this connection", @connection, method: :delete, class: "btn btn--primary" %>
 </div>

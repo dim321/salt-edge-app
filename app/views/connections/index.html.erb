@@ -1,14 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Connections</h1>
-
-<div id="connections">
-  <% @connections.each do |connection| %>
-    <%= render connection %>
-    <p>
-      <%= link_to "Show this connection", connection %>
-    </p>
-  <% end %>
+<%= link_to sanitize("&larr; To customer"), customers_path, class: "btn btn--secondary" %>
+<div class="header">
+  <h1>Connections</h1>
 </div>
-
-<%= link_to "New connection", new_connection_path %>
+<div id="connections">
+    <%= render @connections %>
+</div>
+<% if @connections.empty?%>
+  <%= link_to "New connection", new_connection_path, class: "btn btn--primary" %>
+<% end %>
