@@ -1,5 +1,5 @@
 <p style="color: green"><%= notice %></p>
-<%= link_to sanitize("&larr; Back to accounts"), accounts_path, class: "btn btn--secondary" %>
+<%= link_to sanitize("&larr; Back to accounts"), accounts_path(connection_id: params[:connection_id]), class: "btn btn--secondary" %>
 <div class='header'>
 <h1>Transactions</h1>
 </div>
@@ -9,4 +9,5 @@
     <%= render transaction %>
   <% end %>
 </div>
+<%= link_to "Import transactions", new_transaction_path(account_id: params[:account_id]), class: "btn btn--primary" %>
 

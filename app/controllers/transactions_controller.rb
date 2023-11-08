@@ -13,7 +13,13 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/new
   def new
-    @transaction = Transaction.new
+    transactions = Saltedge::Transactions::Importer.call(current_user)
+
+    if transactions
+      redirect_to transactions_url(account_id: params[:account_id]), notice: "Transactions was successfully imported."
+    else
+      redirect_to connections_url, status: :unprocessable_entity
+    end
   end
 
   # GET /transactions/1/edit

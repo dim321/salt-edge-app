@@ -1,12 +1,16 @@
 <p style="color: green"><%= notice %></p>
+<%= button_to sanitize("&larr; Log out"), destroy_user_session_path, method: :delete, class: "btn btn--primaly" %>
 <div class="header">
 <h1>Customer</h1>
+<h2>
+  <%= current_user.email%>
 </div>
 <div id="customers">
     <%= render @customers %>
 </div>
 <% if @customers.empty? %>
   <%= link_to "New customer", new_customer_path, class: "btn btn--primary" %>
+<% else %>
+  <%= link_to "Connections", connections_path, class: "btn btn--secondary" %>
 <% end %>
-<%= link_to "Connections", connections_path, class: "btn btn--secondary" %>
 

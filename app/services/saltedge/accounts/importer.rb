@@ -5,8 +5,8 @@ module Saltedge
     class Importer < ApplicationService
       attr_reader :connections
 
-      def initialize
-        @connections = ::Connection.all
+      def initialize(user)
+        @connections = user.customer.connections
         @saltedge_gateway = Gateways.saltedge_gateway
       end
 

@@ -3,10 +3,10 @@ module Saltedge
     # class Saltedge::Transactions::Importer is the Service object responsible
     # for fetch all transactions for all accounts via Salt Edge API
     class Importer < ApplicationService
-      attr_reader :accounts, :connections
+      attr_reader :connections
 
-      def initialize
-        @connections = ::Connection.all
+      def initialize(user)
+        @connections = user.customer.connections
         @saltedge_gateway = Gateways.saltedge_gateway
       end
 

@@ -13,7 +13,14 @@ class ConnectionsController < ApplicationController
 
   # GET /connections/new
   def new
-    @connection = @customer.connections.new
+    # Create new connection
+    @connection = Saltedge::Connections::Creator.call(@customer)
+
+    if @connection
+      redirect_to connections_url, notice: "Connection was successfully created."
+    else
+      redirect_to connections_url, status: :unprocessable_entity
+    end
   end
 
   # GET /connections/1/edit
@@ -50,11 +57,16 @@ class ConnectionsController < ApplicationController
 
   # DELETE /connections/1 or /connections/1.json
   def destroy
-    @connection.destroy!
+    result = Saltedge::Connections::Remover.call(@connection)
 
     respond_to do |format|
-      format.html { redirect_to connections_url, notice: "Connection was successfully destroyed." }
-      format.json { head :no_content }
+      if result
+        format.html { redirect_to connections_url, notice: "Connection was successfully destroyed." }
+        format.json { head :no_content }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @connection.errors, status: :unprocessable_entity }
+      end
     end
   end
 
