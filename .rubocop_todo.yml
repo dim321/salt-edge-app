@@ -22,6 +22,8 @@ Lint/MissingSuper:
 Metrics/AbcSize:
   Max: 18
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
 # Offense count: 3
 # Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.
 # AllowedMethods: refine
