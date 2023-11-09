@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root 'customers#index'
 
-  resources :transactions
-  resources :accounts
-  resources :connections
-  resources :providers
-  resources :customers
+  resources :transactions, only: %i[index show new]
+  resources :accounts, only: %i[index show new]
+  resources :connections, only: %i[index show new destroy]
+  resources :providers, only: :index
+  resources :customers, only: :index
   devise_for :users, controllers: { registrations: 'users/registrations' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

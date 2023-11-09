@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Saltedge
   module Connections
     # class Saltedge::Connections::Importer is the Service object responsible

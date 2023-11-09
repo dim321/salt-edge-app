@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Saltedge
   module Connections
     # class Saltedge::Connections::Remover is the Service object responsible

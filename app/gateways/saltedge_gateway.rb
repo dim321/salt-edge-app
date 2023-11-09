@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SaltedgeGateway
   attr_reader :conn
 

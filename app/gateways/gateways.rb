@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # registry pattern to provide global access to singleton instance
 # of Saltedge gateway:
 module Gateways
