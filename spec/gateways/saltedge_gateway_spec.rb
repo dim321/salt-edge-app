@@ -141,7 +141,7 @@ RSpec.describe SaltedgeGateway do
 
       let(:result) { gateway.list_transactions(connection, account) }
 
-      it 'as Array of Salt Edge connections ' do
+      it 'as Array of Salt Edge transactions ' do
         expect(result).to be_an_instance_of(Array)
       end
 
