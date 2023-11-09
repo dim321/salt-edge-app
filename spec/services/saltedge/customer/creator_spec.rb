@@ -2,11 +2,11 @@ RSpec.describe Saltedge::Customer::Creator do
   subject(:creator) { described_class.call(user) }
 
   let(:user) { create(:user) }
-  let(:api_responce) { { 'id' => 2, 'identifier' => user.email } }
+  let(:api_response) { { 'id' => 2, 'identifier' => user.email } }
 
   describe '.call' do
     before do
-      allow_any_instance_of(SaltedgeGateway).to receive(:create_customer).and_return(api_responce)
+      allow_any_instance_of(SaltedgeGateway).to receive(:create_customer).and_return(api_response)
     end
 
     context 'create customer' do
