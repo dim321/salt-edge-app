@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Вся логика создания Customer, Connection, затем импорта соответствующих аккаунтов и транзакций
+реализована через сервисные объекты:
 
-Things you may want to cover:
+__app/services/saltedge/customer/creator.rb__
 
-* Ruby version
+__app/services/saltedge/connection/creator.rb__
 
-* System dependencies
+__app/services/saltedge/connection/importer.rb__
 
-* Configuration
+__app/services/saltedge/connection/remover.rb__
 
-* Database creation
+__app/services/saltedge/accounts/importer.rb__
+                        
+__app/services/saltedge/transactions/importer.rb__
 
-* Database initialization
+тесты соответственно:
 
-* How to run the test suite
+```rspec spec/services/saltedge/customer/creator_spec.rb```
+  
+  недостающие тесты сегодня постараюсь добить)
 
-* Services (job queues, cache servers, search engines, etc.)
+  Взаимодействие с Salt Edge API происходит через выделенный класс SaltedgeGateway:
 
-* Deployment instructions
+  __app/gateways/saltedge_gateway.rb__
 
-* ...
+тесты для него можно запустить здесь:
+
+  ```rspec spec/gateways/saltedge_gateway_spec.rb```
+
+Локально проект работает, сделал попытку задеплоить на fly.io, но на бесплатном аккаунте проект закрашился по причине нехватки памяти, порешаю вопрос с деплоем завтра. 
