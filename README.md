@@ -1,5 +1,9 @@
 # README
 
+Проект задеплоен по адресу:
+
+[Salt Edge App](https://saltedge-app.onrender.com)
+
 Вся логика создания Customer, Connection, затем импорта соответствующих аккаунтов и транзакций
 реализована через сервисные объекты:
 
@@ -35,4 +39,4 @@ __app/services/saltedge/transactions/importer.rb__
 
   ```rspec spec/gateways/saltedge_gateway_spec.rb```
 
-Локально проект работает, сделал попытку задеплоить на fly.io, но на бесплатном аккаунте проект закрашился по причине нехватки памяти, порешаю вопрос с деплоем завтра. 
+Остальные тесты coming soon asap
