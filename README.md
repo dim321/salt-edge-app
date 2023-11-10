@@ -18,6 +18,12 @@ __app/services/saltedge/transactions/importer.rb__
 тесты соответственно:
 
 ```rspec spec/services/saltedge/customer/creator_spec.rb```
+
+```rspec spec/services/saltedge/connections/creator_spec.rb```
+
+```rspec spec/services/saltedge/connections/importer_spec.rb```
+
+```rspec spec/services/saltedge/connections/remover_spec.rb```
   
   недостающие тесты сегодня постараюсь добить)
 
