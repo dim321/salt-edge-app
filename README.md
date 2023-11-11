@@ -2,7 +2,7 @@
 
 Проект задеплоен по адресу:
 
-[Salt Edge App](https://saltedge-app.onrender.com)
+[Salt Edge App](https://saltedge-app.onrender.com) (возможно придется подождать около минуты пока проект выйдет из спящего режима)
 
 Вся логика создания Customer, Connection, затем импорта соответствующих аккаунтов и транзакций
 реализована через сервисные объекты:
@@ -14,6 +14,10 @@ __app/services/saltedge/connection/creator.rb__
 __app/services/saltedge/connection/importer.rb__
 
 __app/services/saltedge/connection/remover.rb__
+
+__app/services/saltedge/connection/reconnector.rb__
+
+__app/services/saltedge/connection/refresher.rb__
 
 __app/services/saltedge/accounts/importer.rb__
                         
