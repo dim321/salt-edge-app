@@ -40,6 +40,22 @@ class SaltedgeGateway
     data response
   end
 
+  def reconnect_connection(connection, payload)
+    params = {
+      data: payload
+    }
+    response = conn.put("connections/#{connection.id}/reconnect", params.to_json)
+    data response
+  end
+
+  def refresh_connection(connection, payload)
+    params = {
+      data: payload
+    }
+    response = conn.put("connections/#{connection.id}/refresh", params.to_json)
+    data response
+  end
+
   def list_accounts(connection)
     response = conn.get("accounts?connection_id=#{connection.id}")
     data response
