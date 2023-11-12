@@ -25,5 +25,17 @@ module SaltEdgeApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.active_job.queue_adapter = :good_job
+    
+    config.good_job.enable_cron = true # or `true` or via $GOOD_JOB_ENABLE_CRON
+
+    config.good_job.cron = {
+      refreshing_task: {
+        cron: "5 0 * * *", # Run this job at 00:05 every night
+        class: 'RefreshingConnectionsJob',
+        description: 'Refreshing connections background job'
+      }
+    }
+    end
   end
 end

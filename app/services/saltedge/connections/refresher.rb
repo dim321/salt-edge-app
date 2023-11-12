@@ -14,7 +14,8 @@ module Saltedge
 
       def call
         refresh = @saltedge_gateway.refresh_connection(connection, payload)
-        connection.update refresh if refresh
+        # I'm not sure if we need to update connection locally
+        # connection.update refresh if refresh
       end
 
       def payload
