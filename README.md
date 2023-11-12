@@ -43,4 +43,8 @@ __app/services/saltedge/transactions/importer.rb__
 
   ```rspec spec/gateways/saltedge_gateway_spec.rb```
 
-Остальные тесты coming soon asap
+Рефрешинг connections запускается background job RefreshingConnectionsJob
+
+по расписанию в 00:05 каждую ночь, адаптер good_job
+
+настройка расписания в config/application.rb

@@ -36,6 +36,5 @@ module SaltEdgeApp
         description: 'Refreshing connections background job'
       }
     }
-    end
   end
 end
