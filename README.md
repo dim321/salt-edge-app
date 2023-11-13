@@ -2,26 +2,30 @@
 
 Проект задеплоен по адресу:
 
-[Salt Edge App](https://saltedge-app.onrender.com) (возможно придется подождать около минуты пока проект выйдет из спящего режима)
+[Salt Edge App](https://saltedge-app.onrender.com) (возможно придется подождать минуту - две пока проект выйдет из анабиоза)
+
+При регистрации нового пользователя триггерится создание соответствующего ему кастомера в методе
+
+__create__ контроллера __users/registrations_controller.rb__
 
 Вся логика создания Customer, Connection, затем импорта соответствующих аккаунтов и транзакций
 реализована через сервисные объекты:
 
-__app/services/saltedge/customer/creator.rb__
+```app/services/saltedge/customer/creator.rb```
 
-__app/services/saltedge/connection/creator.rb__
+```app/services/saltedge/connection/creator.rb```
 
-__app/services/saltedge/connection/importer.rb__
+```app/services/saltedge/connection/importer.rb```
 
-__app/services/saltedge/connection/remover.rb__
+```app/services/saltedge/connection/remover.rb```
 
-__app/services/saltedge/connection/reconnector.rb__
+```app/services/saltedge/connection/reconnector.rb```
 
-__app/services/saltedge/connection/refresher.rb__
+```app/services/saltedge/connection/refresher.rb```
 
-__app/services/saltedge/accounts/importer.rb__
-                        
-__app/services/saltedge/transactions/importer.rb__
+```app/services/saltedge/accounts/importer.rb```
+
+```app/services/saltedge/transactions/importer.rb```
 
 тесты соответственно:
 
@@ -37,7 +41,7 @@ __app/services/saltedge/transactions/importer.rb__
 
   Взаимодействие с Salt Edge API происходит через выделенный класс SaltedgeGateway:
 
-  __app/gateways/saltedge_gateway.rb__
+  ```app/gateways/saltedge_gateway.rb```
 
 тесты для него можно запустить здесь:
 
@@ -48,3 +52,13 @@ __app/services/saltedge/transactions/importer.rb__
 по расписанию в 00:05 каждую ночь, адаптер good_job
 
 настройка расписания в config/application.rb
+
+Коллбэки обрабатываются через контроллер
+
+```app/controllers/callbacks_controller.rb```
+
+после проверки сигнатуры дальнейшая обработка полученных параметров колбека
+
+передается в сервисный объект
+
+```app/services/callbacks/handler.rb```

@@ -13,7 +13,7 @@ module Saltedge
       end
 
       def call
-        refresh = @saltedge_gateway.refresh_connection(connection, payload)
+        @saltedge_gateway.refresh_connection(connection, payload)
       end
 
       def payload
