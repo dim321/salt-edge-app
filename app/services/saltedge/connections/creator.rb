@@ -22,7 +22,7 @@ module Saltedge
         {
           customer_id: customer.id,
           country_code: 'XF',
-          provider_code: provider.code,
+          provider_code: provider&.code,
           consent: {
             from_date: '2023-11-03',
             scopes: %w[
