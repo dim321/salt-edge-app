@@ -7,12 +7,14 @@ class CustomersController < ApplicationController
   end
 
   def new
-    customer = Saltedge::Customer::Creator.call(current_user)
+    unless current_user.customer.present?
+      customer = Saltedge::Customer::Creator.call(current_user)
+    end
     
     if customer
       redirect_to customers_path, notice: 'Customer was successfully created.'
     else
-      redirect_to customers_path, status: :unprocessable_entity
+      redirect_to customers_path, notice: 'Current user already have customer'
     end
   end
 end

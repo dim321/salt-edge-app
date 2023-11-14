@@ -3,7 +3,7 @@ RSpec.describe Saltedge::Connections::Importer do
 
   let(:customer) { create(:customer) }
   let(:api_response) { [{ 'id' => 2, 'customer_id' => customer.id, 'provider_id' => provider.id }] }
-  let(:provider) { Provider.fakebank }
+  let(:provider) { create(:provider) }
 
   describe '.call' do
     before do
