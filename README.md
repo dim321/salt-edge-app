@@ -36,8 +36,7 @@ __create__ контроллера __users/registrations_controller.rb__
 ```rspec spec/services/saltedge/connections/importer_spec.rb```
 
 ```rspec spec/services/saltedge/connections/remover_spec.rb```
-  
-  недостающие тесты сегодня постараюсь добить)
+
 
   Взаимодействие с Salt Edge API происходит через выделенный класс SaltedgeGateway:
 
